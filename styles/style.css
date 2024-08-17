@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/*.color1 {color: #123a53;}
-.color2 {color: #124f6d;}
-.color3 {color: #14768d;}
-.color4 {color: #1aa7af;}
-.color5 {color: #20dbce;}*/
 
 :root {
     --color-primario: #9bd67c;
@@ -129,6 +124,7 @@ body {
     flex-direction: auto;
     gap: 10px;
     margin-top: auto;
+    margin-bottom: 10px;
 }
 
 .button__encriptar, .button__desencriptar {
@@ -189,3 +185,86 @@ body {
 .text-output__image.hidden {
     display: none;
 }
+
+
+
+/* Estilos responsivos */
+
+/* Tablet en orientación vertical */
+@media (max-width: 768px) {
+    .container-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .tittle {
+        font-size: 40px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .text-output {
+        width: 100%;
+    }
+
+    .text-input__text {
+        font-size: 28px;
+    }
+
+    .text-output__text {
+        width: 100%;
+    }
+
+    .button__encriptar, .button__desencriptar, .button__copiar {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+/* Celular en orientación vertical */
+@media (max-width: 480px) {
+    .tittle {
+        font-size: 32px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .text-input {
+        font-size: 24px;
+    }
+
+    .text-input__text {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .text-output {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .text-output__text {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .button__encriptar, .button__desencriptar, .button__copiar {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
