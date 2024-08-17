@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*.color1 {color: #123a53;}
+.color2 {color: #124f6d;}
+.color3 {color: #14768d;}
+.color4 {color: #1aa7af;}
+.color5 {color: #20dbce;}*/
+
+:root {
+    --color-primario: #9bd67c;
+    --color-secundario: #b4e095;
+    --color-terciario: #cdebae;
+    --color-cuarto: #e6f5c6;
+    --color-quinto: #ffffdf;
+    --color-sexto: #f5f5f5;
+    --color-blanco: #ffffff;
+    --color-texto: #5d5d5d;
+    --color-boton: #7fa56a;
+    --color-fondo: #fcfceb;
+}
+
+body {
+    background-color: var(--color-fondo);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.header, .footer {
+    text-align: center;
+    padding: 10px;
+}
+
+.container-header {
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo y el título en el contenedor */
+    justify-content: center; /* Opcional: centra todo el contenido horizontalmente */
+    gap: 20px; /* Espacio entre el logo y el título */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Asegura que el logo esté centrado verticalmente */
+    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+.tittle{
+    font-family: 'Krona One', sans-serif;
+    font-size:  50px;
+    color: var(--color-primario);
+    margin: 0;
+    text-align: center; /* Centra el texto horizontalmente dentro del contenedor */
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 140px); /* Ajusta la altura para que no cubra el header y footer */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+    font-size: 32px;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.text-input__text {
+    background-color: var(--color-blanco);
+    border: none;
+    color: var(--color-texto);
+    font-size: 32px;
+    box-shadow: 5px 15px 15px 15px var(--color-cuarto);
+    border-radius: 32px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    text-align: left; /* Cambiado a izquierda para mayor claridad */
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.text-output {
+    background-color: var(--color-quinto);
+    box-shadow: 5px 15px 15px 15px var(--color-cuarto);
+    border-radius: 32px;
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: auto; /* Ajustado para el contenido dinámico */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-output__title {
+    font-size: 24px;
+    margin: 10px 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-output__text {
+    justify-content: center; /* Centra horizontalmente */
+    width: 328px;
+    min-height: auto;
+    text-align: center;     /* Centra el texto horizontalmente dentro del contenedor */
+}
+
+.button_container_1 {
+    display: flex;
+    flex-direction: auto;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: 10px;
+    justify-content: center;  
+    padding: 10px;
+}
+
+.button_container_2 {
+    display: flex;
+    flex-direction: auto;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.button__encriptar, .button__desencriptar {
+    border-radius: 24px;
+    width: 328px;
+    height: 67px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid var(--color-primario);
+    transition: background-color 0.3s;
+}
+
+.button__copiar {
+    border-radius: 24px;
+    width: 328px;
+    height: 67px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid var(--color-primario);
+    transition: background-color 0.3s;
+}
+
+.button__encriptar, .button__desencriptar {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.button__encriptar:hover, .button__desencriptar:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-boton);
+}
+
+.button__copiar {
+    background-color: var(--color-terciario);
+    color: var(--color-boton);
+}
+
+.button__copiar:hover {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.footer {
+    color: var(--color-primario);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.text-output__text.text-encriptado {
+    font-size: 24px; /* Ajusta el tamaño del texto según lo necesites */
+}
+
+.text-output__text.text-desencriptado {
+    font-size: 24px; /* Ajusta el tamaño del texto según lo necesites */
+}
+
+
+.text-output__image.hidden {
+    display: none;
+}

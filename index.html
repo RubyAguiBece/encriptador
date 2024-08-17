@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <img class="logo" src="./images/encriptado.png" alt="Logo de Alura">
+            <h1 class = "title">Encriptador</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="text-input">
+                <textarea class="text-input__text" name="text-input" id="text-input" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="button_container_1">
+                    <button class="button__encriptar" onclick="encriptar()">Encriptar</button>
+                    <button class="button__desencriptar" onclick="desencriptar()">Desencriptar</button>
+                </div>
+            </div>
+            <div class="text-output">
+                <img class= "text-output__image" src="./images/buscar.png" alt="Muñeco" id ="text-output-image" >
+                <h1 class="text-output__title" id="text-output-title">Ningún mensaje fue encontrado</h1>
+                <p class="text-output__text" id="text-output-text">Ingresa el texto que desees encriptar o desencriptar</p>
+                <div class="button_container_2">
+                    <button class="button__copiar" onclick="copiar()">Copiar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&#169; Desarrollado por la Ingeniera Ruby Aguilar</p>
+    </footer>
+    <script src="encriptador.js" defer></script>
+</body>
+</html>
