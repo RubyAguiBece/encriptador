@@ -27,16 +27,16 @@ body {
 
 .container-header {
     display: flex;
-    align-items: center; /* Centra verticalmente el logo y el título en el contenedor */
-    justify-content: center; /* Opcional: centra todo el contenido horizontalmente */
-    gap: 20px; /* Espacio entre el logo y el título */
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .logo {
     display: flex;
-    align-items: center; /* Asegura que el logo esté centrado verticalmente */
-    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
-    height: auto; /* Mantiene la proporción del logo */
+    align-items: center; 
+    width: 100px; 
+    height: auto; 
 }
 
 .tittle{
@@ -44,12 +44,12 @@ body {
     font-size:  50px;
     color: var(--color-primario);
     margin: 0;
-    text-align: center; /* Centra el texto horizontalmente dentro del contenedor */
+    text-align: center;
 }
 
 .container {
     display: flex;
-    height: calc(100vh - 140px); /* Ajusta la altura para que no cubra el header y footer */
+    height: calc(100vh - 140px); 
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
@@ -76,7 +76,7 @@ body {
     height: 100%;
     resize: none;
     padding: 10px;
-    text-align: left; /* Cambiado a izquierda para mayor claridad */
+    text-align: left; 
     line-height: 1.5;
     box-sizing: border-box;
 }
@@ -90,7 +90,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 400px;
-    height: auto; /* Ajustado para el contenido dinámico */
+    height: auto; 
     padding: 20px;
     box-sizing: border-box;
 }
@@ -103,10 +103,10 @@ body {
 }
 
 .text-output__text {
-    justify-content: center; /* Centra horizontalmente */
+    justify-content: center; 
     width: 328px;
     min-height: auto;
-    text-align: center;     /* Centra el texto horizontalmente dentro del contenedor */
+    text-align: center;     
 }
 
 .button_container_1 {
@@ -174,11 +174,11 @@ body {
 }
 
 .text-output__text.text-encriptado {
-    font-size: 24px; /* Ajusta el tamaño del texto según lo necesites */
+    font-size: 24px; 
 }
 
 .text-output__text.text-desencriptado {
-    font-size: 24px; /* Ajusta el tamaño del texto según lo necesites */
+    font-size: 24px;
 }
 
 
@@ -188,9 +188,7 @@ body {
 
 
 
-/* Estilos responsivos */
-
-/* Tablet en orientación vertical */
+/*tablet*/
 @media (max-width: 768px) {
     .container-header {
         flex-direction: column;
@@ -228,7 +226,7 @@ body {
     }
 }
 
-/* Celular en orientación vertical */
+/* Celular*/
 @media (max-width: 480px) {
     .tittle {
         font-size: 32px;
