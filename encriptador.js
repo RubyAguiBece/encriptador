@@ -9,9 +9,9 @@ function encriptar() {
     }
 
     const textoEncriptado = textoInput
-        .replace(/a/g, 'ai')
         .replace(/e/g, 'enter')
         .replace(/i/g, 'imes')
+        .replace(/a/g, 'ai')
         .replace(/o/g, 'ober')
         .replace(/u/g, 'ufat');
         
@@ -21,9 +21,9 @@ function encriptar() {
 function desencriptar() {
     const textoInput = document.getElementById('text-input').value.toLowerCase();
     const textoDesencriptado = textoInput
-        .replace(/ai/g, 'a')
         .replace(/enter/g, 'e')
         .replace(/imes/g, 'i')
+        .replace(/ai/g, 'a')
         .replace(/ober/g, 'o')
         .replace(/ufat/g, 'u');
         
