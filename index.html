@@ -1,40 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador</title>
+
+    <title>Encriptador 2.0</title>
+
     <link rel="stylesheet" href="./styles/style.css">
+
 </head>
+
 <body>
-    <header>
-        <div class="container-header">
-            <img class="logo" src="./images/encriptado.png" alt="Logo de Alura">
-            <h1 class = "title">Encriptador</h1>
+
+<header>
+
+    <div class="container-header">
+
+        <img
+            src="./images/encriptado.png"
+            alt="Logo"
+            class="logo">
+
+        <div>
+
+            <h1 class="title">Encriptador 2.0</h1>
+
+            <p class="subtitle">
+                Convierte tus mensajes de una forma divertida
+            </p>
+
         </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <div class="text-input">
-                <textarea class="text-input__text" name="text-input" id="text-input" placeholder="Ingrese el texto aquí"></textarea>
-                <div class="button_container_1">
-                    <button class="button__encriptar" onclick="encriptar()">Encriptar</button>
-                    <button class="button__desencriptar" onclick="desencriptar()">Desencriptar</button>
-                </div>
-            </div>
-            <div class="text-output">
-                <img class= "text-output__image" src="./images/buscar.png" alt="Muñeco" id ="text-output-image" >
-                <h1 class="text-output__title" id="text-output-title">Ningún mensaje fue encontrado</h1>
-                <p class="text-output__text" id="text-output-text">Ingresa el texto que desees encriptar o desencriptar</p>
-                <div class="button_container_2">
-                    <button class="button__copiar" onclick="copiar()">Copiar</button>
-                </div>
-            </div>
+
+    </div>
+
+</header>
+
+<main>
+
+<div class="container">
+
+    <!-- PANEL IZQUIERDO -->
+
+    <section class="text-input">
+
+        <textarea
+
+            id="text-input"
+
+            class="text-input__text"
+
+            placeholder="Escribe aquí tu mensaje...">
+
+        </textarea>
+
+        <div class="info-bar">
+
+            <span id="contadorCaracteres">
+
+                0 caracteres
+
+            </span>
+
+            <span id="contadorPalabras">
+
+                0 palabras
+
+            </span>
+
         </div>
-    </main>
-    <footer class="footer">
-        <p>&#169; Desarrollado por la Ingeniera Ruby Aguilar</p>
-    </footer>
-    <script src="encriptador.js" defer></script>
+
+        <div class="button_container_1">
+
+            <button
+                class="button__encriptar"
+                onclick="encriptar()">
+
+                🔒 Encriptar
+
+            </button>
+
+            <button
+                class="button__desencriptar"
+                onclick="desencriptar()">
+
+                🔓 Desencriptar
+
+            </button>
+
+        </div>
+
+        <div class="button_container_1">
+
+            <button
+                class="button__copiar"
+                onclick="copiar()">
+
+                📋 Copiar
+
+            </button>
+
+            <button
+                class="button__limpiar"
+                onclick="limpiarTexto()">
+
+                🗑 Limpiar
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PANEL DERECHO -->
+
+    <section class="text-output">
+
+        <img
+
+            src="./images/buscar.png"
+
+            id="text-output-image"
+
+            class="text-output__image"
+
+            alt="Buscar">
+
+        <h2
+            id="text-output-title"
+            class="text-output__title">
+
+            Ningún mensaje fue encontrado
+
+        </h2>
+
+        <p
+            id="text-output-text"
+            class="text-output__text">
+
+            Ingresa un texto para comenzar.
+
+        </p>
+
+    </section>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+    © 2026 • Desarrollado por Ruby Aguilar
+
+</footer>
+
+<script src="encriptador.js"></script>
+
+<script>
+
+const textarea = document.getElementById("text-input");
+
+const contadorCaracteres =
+document.getElementById("contadorCaracteres");
+
+const contadorPalabras =
+document.getElementById("contadorPalabras");
+
+textarea.addEventListener("input", () => {
+
+    const texto = textarea.value;
+
+    contadorCaracteres.innerText =
+        `${texto.length} caracteres`;
+
+    const palabras = texto.trim()
+        ? texto.trim().split(/\s+/).length
+        : 0;
+
+    contadorPalabras.innerText =
+        `${palabras} palabras`;
+
+});
+
+function limpiarTexto(){
+
+    textarea.value="";
+
+    contadorCaracteres.innerText="0 caracteres";
+
+    contadorPalabras.innerText="0 palabras";
+
+    document.getElementById("text-output-title").innerText =
+        "Ningún mensaje fue encontrado";
+
+    document.getElementById("text-output-text").innerText =
+        "Ingresa un texto para comenzar.";
+
+    document
+        .getElementById("text-output-image")
+        .classList.remove("hidden");
+
+}
+
+</script>
+
 </body>
+
 </html>

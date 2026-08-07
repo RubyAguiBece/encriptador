@@ -1,268 +1,830 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Krona+One&display=swap');
 
+/* ======================================================
+   VARIABLES
+====================================================== */
 
-:root {
-    --color-primario: #9bd67c;
-    --color-secundario: #b4e095;
-    --color-terciario: #cdebae;
-    --color-cuarto: #e6f5c6;
-    --color-quinto: #ffffdf;
-    --color-sexto: #f5f5f5;
-    --color-blanco: #ffffff;
-    --color-texto: #5d5d5d;
-    --color-boton: #7fa56a;
-    --color-fondo: #fcfceb;
+:root{
+
+    --primary:#6BBF59;
+    --primary-hover:#56A848;
+
+    --secondary:#EAF7E4;
+
+    --background:#F8FFF5;
+
+    --card:#FFFFFF;
+
+    --text:#2E3A2E;
+
+    --text-light:#6C7A6C;
+
+    --border:#DDEBD6;
+
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+
+    --radius:24px;
+
 }
 
-body {
-    background-color: var(--color-fondo);
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+/* ======================================================
+   RESET
+====================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
 }
 
-.header, .footer {
-    text-align: center;
-    padding: 10px;
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-.container-header {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    gap: 20px; 
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:linear-gradient(
+        180deg,
+        #F8FFF5,
+        #EEF9E8
+    );
+
+    color:var(--text);
+
+    min-height:100vh;
+
 }
 
-.logo {
-    display: flex;
-    align-items: center; 
-    width: 100px; 
-    height: auto; 
+/* ======================================================
+   HEADER
+====================================================== */
+
+header{
+
+    padding:40px 20px;
+
 }
 
-.tittle{
-    font-family: 'Krona One', sans-serif;
-    font-size:  50px;
-    color: var(--color-primario);
-    margin: 0;
-    text-align: center;
+.container-header{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
 }
 
-.container {
-    display: flex;
-    height: calc(100vh - 140px); 
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-    box-sizing: border-box;
-    gap: 20px;
+.logo{
+
+    width:90px;
+
+    transition:.35s;
+
 }
 
-.text-input {
-    display: flex;
-    flex-direction: column;
-    font-size: 32px;
-    flex: 1;
-    box-sizing: border-box;
+.logo:hover{
+
+    transform:rotate(-5deg) scale(1.05);
+
 }
 
-.text-input__text {
-    background-color: var(--color-blanco);
-    border: none;
-    color: var(--color-texto);
-    font-size: 32px;
-    box-shadow: 5px 15px 15px 15px var(--color-cuarto);
-    border-radius: 32px;
-    width: 100%;
-    height: 100%;
-    resize: none;
-    padding: 10px;
-    text-align: left; 
-    line-height: 1.5;
-    box-sizing: border-box;
+.title{
+
+    font-family:"Krona One";
+
+    font-size:2.2rem;
+
+    color:var(--primary);
+
 }
 
-.text-output {
-    background-color: var(--color-quinto);
-    box-shadow: 5px 15px 15px 15px var(--color-cuarto);
-    border-radius: 32px;
-    color: var(--color-texto);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px;
-    height: auto; 
-    padding: 20px;
-    box-sizing: border-box;
+.subtitle{
+
+    margin-top:10px;
+
+    color:var(--text-light);
+
 }
 
-.text-output__title {
-    font-size: 24px;
-    margin: 10px 0;
-    justify-content: center;
-    text-align: center;
+/* ======================================================
+   LAYOUT
+====================================================== */
+
+.container{
+
+    width:min(1200px,95%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:35px;
+
+    align-items:stretch;
+
+    padding-bottom:40px;
+
 }
 
-.text-output__text {
-    justify-content: center; 
-    width: 328px;
-    min-height: auto;
-    text-align: center;     
+.text-input,
+.text-output{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:30px;
+
 }
 
-.button_container_1 {
-    display: flex;
-    flex-direction: auto;
-    gap: 10px;
-    margin-top: auto;
-    margin-bottom: 10px;
-    justify-content: center;  
-    padding: 10px;
+/* ======================================================
+   PANEL IZQUIERDO
+====================================================== */
+
+.text-input{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
 }
 
-.button_container_2 {
-    display: flex;
-    flex-direction: auto;
-    gap: 10px;
-    margin-top: auto;
-    margin-bottom: 10px;
+/* ======================================================
+   TEXTAREA
+====================================================== */
+
+.text-input__text{
+
+    width:100%;
+
+    min-height:420px;
+
+    border:none;
+
+    outline:none;
+
+    resize:none;
+
+    background:#FAFFFA;
+
+    color:var(--text);
+
+    font-size:1.2rem;
+
+    font-family:"Inter",sans-serif;
+
+    line-height:1.7;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    border:2px solid transparent;
+
+    transition:.30s;
+
 }
 
-.button__encriptar, .button__desencriptar {
-    border-radius: 24px;
-    width: 328px;
-    height: 67px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px solid var(--color-primario);
-    transition: background-color 0.3s;
+.text-input__text::placeholder{
+
+    color:#9AA89A;
+
 }
 
-.button__copiar {
-    border-radius: 24px;
-    width: 328px;
-    height: 67px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px solid var(--color-primario);
-    transition: background-color 0.3s;
+.text-input__text:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 5px rgba(107,191,89,.18);
+
+    background:white;
+
 }
 
-.button__encriptar, .button__desencriptar {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+/* ======================================================
+   CONTADORES
+====================================================== */
+
+.info-bar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 16px;
+
+    border-radius:16px;
+
+    background:var(--secondary);
+
+    color:var(--text-light);
+
+    font-size:.92rem;
+
+    font-weight:500;
+
 }
 
-.button__encriptar:hover, .button__desencriptar:hover {
-    background-color: var(--color-terciario);
-    color: var(--color-boton);
+.info-bar span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
 }
 
-.button__copiar {
-    background-color: var(--color-terciario);
-    color: var(--color-boton);
+/* ======================================================
+   BOTONERAS
+====================================================== */
+
+.button_container_1{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
 }
 
-.button__copiar:hover {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+.button_container_1 button{
+
+    flex:1;
+
 }
 
-.footer {
-    color: var(--color-primario);
-    font-size: 14px;
-    font-weight: 400;
-}
+/* ======================================================
+   RESPONSIVE INPUT
+====================================================== */
 
-.text-output__text.text-encriptado {
-    font-size: 24px; 
-}
+@media(max-width:768px){
 
-.text-output__text.text-desencriptado {
-    font-size: 24px;
-}
+    .text-input__text{
 
+        min-height:300px;
 
-.text-output__image.hidden {
-    display: none;
-}
+        font-size:1rem;
 
-
-
-/*tablet*/
-@media (max-width: 768px) {
-    .container-header {
-        flex-direction: column;
-        text-align: center;
     }
 
-    .logo {
-        width: 80px;
+    .info-bar{
+
+        flex-direction:column;
+
+        gap:8px;
+
     }
 
-    .tittle {
-        font-size: 40px;
+    .button_container_1{
+
+        flex-direction:column;
+
     }
 
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .text-output {
-        width: 100%;
-    }
-
-    .text-input__text {
-        font-size: 28px;
-    }
-
-    .text-output__text {
-        width: 100%;
-    }
-
-    .button__encriptar, .button__desencriptar, .button__copiar {
-        width: 100%;
-        font-size: 14px;
-    }
 }
 
-/* Celular*/
-@media (max-width: 480px) {
-    .tittle {
-        font-size: 32px;
-    }
+/* ======================================================
+   PANEL DERECHO
+====================================================== */
 
-    .logo {
-        width: 60px;
-    }
+.text-output{
 
-    .container {
-        flex-direction: column;
-        padding: 5px;
-    }
+    display:flex;
 
-    .text-input {
-        font-size: 24px;
-    }
+    flex-direction:column;
 
-    .text-input__text {
-        font-size: 24px;
-        padding: 8px;
-    }
+    align-items:center;
 
-    .text-output {
-        width: 100%;
-        padding: 10px;
-    }
+    justify-content:center;
 
-    .text-output__text {
-        width: 100%;
-        font-size: 20px;
-    }
+    text-align:center;
 
-    .button__encriptar, .button__desencriptar, .button__copiar {
-        width: 100%;
-        font-size: 14px;
-    }
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.35s;
+
 }
+
+.text-output::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(107,191,89,.08);
+
+    top:-80px;
+
+    right:-80px;
+
+}
+
+.text-output::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:50%;
+
+    background:rgba(107,191,89,.05);
+
+    bottom:-70px;
+
+    left:-70px;
+
+}
+
+/* ======================================================
+   IMAGEN
+====================================================== */
+
+.text-output__image{
+
+    width:240px;
+
+    max-width:100%;
+
+    margin-bottom:25px;
+
+    transition:.35s;
+
+    animation:flotar 3s ease-in-out infinite;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* ======================================================
+   TITULO
+====================================================== */
+
+.text-output__title{
+
+    font-size:1.6rem;
+
+    color:var(--text);
+
+    margin-bottom:18px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ======================================================
+   TEXTO RESULTADO
+====================================================== */
+
+.text-output__text{
+
+    width:100%;
+
+    min-height:140px;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:#F8FFF5;
+
+    border:1px dashed var(--border);
+
+    color:var(--text-light);
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    transition:.35s;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* Cuando hay texto */
+
+.text-encriptado{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.text-desencriptado{
+
+    color:#2E3A2E;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+   EFECTO RESULTADO
+====================================================== */
+
+.text-output__text:not(:empty){
+
+    animation:aparecer .45s ease;
+
+}
+
+/* ======================================================
+   ANIMACIONES
+====================================================== */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes flotar{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE PANEL DERECHO
+====================================================== */
+
+@media(max-width:768px){
+
+    .text-output{
+
+        padding:25px;
+
+    }
+
+    .text-output__image{
+
+        width:170px;
+
+    }
+
+    .text-output__title{
+
+        font-size:1.3rem;
+
+    }
+
+    .text-output__text{
+
+        min-height:110px;
+
+        font-size:1rem;
+
+    }
+
+}
+
+/* ======================================================
+   BOTONES
+====================================================== */
+
+button{
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    padding:16px 24px;
+
+    transition:all .25s ease;
+
+}
+
+.button__encriptar{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.button__encriptar:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(107,191,89,.25);
+
+}
+
+.button__desencriptar{
+
+    background:white;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+}
+
+.button__desencriptar:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-2px);
+
+}
+
+.button__copiar{
+
+    background:#4A90E2;
+
+    color:white;
+
+}
+
+.button__copiar:hover{
+
+    background:#357ABD;
+
+    transform:translateY(-2px);
+
+}
+
+.button__limpiar{
+
+    background:#F3F4F6;
+
+    color:#555;
+
+}
+
+.button__limpiar:hover{
+
+    background:#E5E7EB;
+
+    transform:translateY(-2px);
+
+}
+
+/* ======================================================
+   TOAST
+====================================================== */
+
+#toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(120px);
+
+    background:#222;
+
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:30px;
+
+    font-size:.95rem;
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+}
+
+#toast.mostrar{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EEF6EC;
+
+}
+
+/* ======================================================
+   SELECCIÓN DE TEXTO
+====================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ======================================================
+   EFECTOS
+====================================================== */
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+.text-output:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.text-input:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.text-input,
+.text-output{
+
+    transition:transform .25s ease;
+
+}
+
+/* ======================================================
+   RESPONSIVE FINAL
+====================================================== */
+
+@media(max-width:600px){
+
+    button{
+
+        width:100%;
+
+    }
+
+    .button_container_1{
+
+        gap:12px;
+
+    }
+
+    .title{
+
+        font-size:1.6rem;
+
+    }
+
+    .subtitle{
+
+        font-size:.9rem;
+
+    }
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+}
+
+/* ======================================================
+   RESPONSIVE BASE
+====================================================== */
+
+@media(max-width:900px){
+
+    .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .container-header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
 
