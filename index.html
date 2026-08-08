@@ -5,206 +5,312 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Encriptador 2.0</title>
+    <meta
+        name="description"
+        content="Encriptador Studio - Crea, encripta y desencripta mensajes con diferentes algoritmos."
+    >
 
-    <link rel="stylesheet" href="./styles/style.css">
+    <title>Encriptador Studio</title>
+
+    <link
+        rel="stylesheet"
+        href="./assets/css/style.css"
+    >
 
 </head>
 
 <body>
 
-<header>
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
 
-    <div class="container-header">
+    <header class="header">
 
-        <img
-            src="./images/encriptado.png"
-            alt="Logo"
-            class="logo">
+        <div class="container-header">
 
-        <div>
+            <img
+                src="./assets/images/encriptado.png"
+                alt="Encriptador Studio"
+                class="logo"
+            >
 
-            <h1 class="title">Encriptador 2.0</h1>
+            <div class="header-content">
 
-            <p class="subtitle">
-                Convierte tus mensajes de una forma divertida
-            </p>
+                <h1 class="title">
+                    Encriptador Studio
+                </h1>
 
-        </div>
+                <p class="subtitle">
+                    Crea, transforma y descubre mensajes
+                </p>
 
-    </div>
-
-</header>
-
-<main>
-
-<div class="container">
-
-    <!-- PANEL IZQUIERDO -->
-
-    <section class="text-input">
-
-        <textarea
-
-            id="text-input"
-
-            class="text-input__text"
-
-            placeholder="Escribe aquí tu mensaje...">
-
-        </textarea>
-
-        <div class="info-bar">
-
-            <span id="contadorCaracteres">
-
-                0 caracteres
-
-            </span>
-
-            <span id="contadorPalabras">
-
-                0 palabras
-
-            </span>
+            </div>
 
         </div>
 
-        <div class="button_container_1">
+    </header>
 
-            <button
-                class="button__encriptar"
-                onclick="encriptar()">
 
-                🔒 Encriptar
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
 
-            </button>
+    <main class="main">
 
-            <button
-                class="button__desencriptar"
-                onclick="desencriptar()">
+        <div class="container">
 
-                🔓 Desencriptar
 
-            </button>
+            <!-- ==========================================
+                 PANEL DE ENTRADA
+            =========================================== -->
+
+            <section class="text-input">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            MENSAJE
+                        </span>
+
+                        <h2>
+                            Escribe tu mensaje
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Selector de algoritmo -->
+
+                <div class="algorithm-selector">
+
+                    <label for="algorithm-select">
+                        Algoritmo
+                    </label>
+
+                    <select
+                        id="algorithm-select"
+                        name="algorithm"
+                    >
+
+                        <option value="classic">
+                            🔐 Clásico
+                        </option>
+
+                    </select>
+
+                    <div
+                        id="algorithm-info"
+                        class="algorithm-info"
+                    >
+
+                        <p
+                            id="algorithm-description"
+                            class="algorithm-description"
+                        >
+                            Algoritmo clásico de sustitución.
+                        </p>
+
+                        <div
+                            id="algorithm-metadata"
+                            class="algorithm-metadata"
+                        ></div>
+
+                        <div
+                            id="algorithm-configuration"
+                            class="algorithm-configuration hidden"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Área de texto -->
+
+                <textarea
+                    id="text-input"
+                    class="text-input__text"
+                    placeholder="Escribe aquí el mensaje que deseas encriptar..."
+                    aria-label="Mensaje de entrada"
+                ></textarea>
+
+
+                <!-- Información -->
+
+                <div class="info-bar">
+
+                    <span id="contadorCaracteres">
+                        0 caracteres
+                    </span>
+
+                    <span id="contadorPalabras">
+                        0 palabras
+                    </span>
+
+                </div>
+
+
+                <!-- Botones principales -->
+
+                <div class="button_container_1">
+
+                    <button
+                        id="encrypt-button"
+                        class="button__encriptar"
+                        type="button"
+                    >
+                        🔒 Encriptar
+                    </button>
+
+                    <button
+                        id="decrypt-button"
+                        class="button__desencriptar"
+                        type="button"
+                    >
+                        🔓 Desencriptar
+                    </button>
+
+                </div>
+
+
+                <!-- Botones secundarios -->
+
+                <div class="button_container_1">
+
+                    <button
+                        id="paste-button"
+                        class="button__copiar"
+                        type="button"
+                    >
+                        📋 Pegar
+                    </button>
+
+                    <button
+                        id="clear-button"
+                        class="button__limpiar"
+                        type="button"
+                    >
+                        🗑 Limpiar
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 PANEL DE RESULTADO
+            =========================================== -->
+
+            <section class="text-output">
+
+                <span class="section-label">
+                    RESULTADO
+                </span>
+
+
+                <img
+                    src="./assets/images/buscar.png"
+                    id="text-output-image"
+                    class="text-output__image"
+                    alt="Esperando un mensaje"
+                >
+
+
+                <h2
+                    id="text-output-title"
+                    class="text-output__title"
+                >
+                    Ningún mensaje fue encontrado
+                </h2>
+
+
+                <p
+                    id="text-output-text"
+                    class="text-output__text"
+                >
+                    Ingresa un texto para comenzar.
+                </p>
+
+
+                <!-- Acciones del resultado -->
+
+                <div
+                    id="result-actions"
+                    class="result-actions"
+                >
+
+                    <button
+                        id="copy-button"
+                        class="button__copiar"
+                        type="button"
+                    >
+                        📋 Copiar
+                    </button>
+
+                    <button
+                        id="download-button"
+                        class="button__limpiar"
+                        type="button"
+                    >
+                        ⬇ Descargar
+                    </button>
+
+                </div>
+
+            </section>
 
         </div>
 
-        <div class="button_container_1">
+    </main>
 
-            <button
-                class="button__copiar"
-                onclick="copiar()">
 
-                📋 Copiar
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
 
-            </button>
+    <footer class="footer">
 
-            <button
-                class="button__limpiar"
-                onclick="limpiarTexto()">
-
-                🗑 Limpiar
-
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- PANEL DERECHO -->
-
-    <section class="text-output">
-
-        <img
-
-            src="./images/buscar.png"
-
-            id="text-output-image"
-
-            class="text-output__image"
-
-            alt="Buscar">
-
-        <h2
-            id="text-output-title"
-            class="text-output__title">
-
-            Ningún mensaje fue encontrado
-
-        </h2>
-
-        <p
-            id="text-output-text"
-            class="text-output__text">
-
-            Ingresa un texto para comenzar.
-
+        <p>
+            © 2026 Encriptador Studio
         </p>
 
-    </section>
+        <span>
+            Una herramienta para crear experiencias con mensajes.
+        </span>
 
-</div>
+    </footer>
 
-</main>
 
-<footer class="footer">
+    <!-- ==================================================
+         TOAST
+    =================================================== -->
 
-    © 2026 • Desarrollado por Ruby Aguilar
+    <div
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
 
-</footer>
 
-<script src="encriptador.js"></script>
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
 
-<script>
-
-const textarea = document.getElementById("text-input");
-
-const contadorCaracteres =
-document.getElementById("contadorCaracteres");
-
-const contadorPalabras =
-document.getElementById("contadorPalabras");
-
-textarea.addEventListener("input", () => {
-
-    const texto = textarea.value;
-
-    contadorCaracteres.innerText =
-        `${texto.length} caracteres`;
-
-    const palabras = texto.trim()
-        ? texto.trim().split(/\s+/).length
-        : 0;
-
-    contadorPalabras.innerText =
-        `${palabras} palabras`;
-
-});
-
-function limpiarTexto(){
-
-    textarea.value="";
-
-    contadorCaracteres.innerText="0 caracteres";
-
-    contadorPalabras.innerText="0 palabras";
-
-    document.getElementById("text-output-title").innerText =
-        "Ningún mensaje fue encontrado";
-
-    document.getElementById("text-output-text").innerText =
-        "Ingresa un texto para comenzar.";
-
-    document
-        .getElementById("text-output-image")
-        .classList.remove("hidden");
-
-}
-
-</script>
+    <script
+        type="module"
+        src="./assets/js/app.js"
+    ></script>
 
 </body>
 

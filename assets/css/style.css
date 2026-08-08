@@ -1,0 +1,1222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Krona+One&display=swap');
+
+/* ======================================================
+   VARIABLES
+====================================================== */
+
+:root {
+
+    --primary: #6bbf59;
+    --primary-dark: #4fa344;
+    --primary-light: #eaf7e4;
+
+    --background: #f5faf2;
+
+    --card: #ffffff;
+
+    --text: #263326;
+    --text-secondary: #6b776b;
+
+    --border: #dce8d8;
+
+    --danger: #e57373;
+
+    --shadow:
+        0 15px 40px rgba(52, 85, 45, 0.08);
+
+    --shadow-hover:
+        0 20px 45px rgba(52, 85, 45, 0.13);
+
+    --radius: 24px;
+
+}
+
+
+/* ======================================================
+   RESET
+====================================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(107, 191, 89, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(107, 191, 89, 0.08),
+            transparent 30%
+        ),
+        var(--background);
+
+}
+
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header {
+
+    padding: 35px 20px 25px;
+
+}
+
+
+.container-header {
+
+    width: min(1200px, 94%);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+}
+
+
+.logo {
+
+    width: 78px;
+
+    height: 78px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 8px 15px
+            rgba(67, 120, 55, 0.15)
+        );
+
+    transition: transform .3s ease;
+
+}
+
+
+.logo:hover {
+
+    transform:
+        rotate(-4deg)
+        scale(1.05);
+
+}
+
+
+.header-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.title {
+
+    font-family: "Krona One", sans-serif;
+
+    font-size: clamp(
+        1.7rem,
+        4vw,
+        2.6rem
+    );
+
+    color: var(--primary-dark);
+
+    letter-spacing: -1px;
+
+}
+
+
+.subtitle {
+
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+
+}
+
+
+/* ======================================================
+   MAIN
+====================================================== */
+
+.main {
+
+    padding: 10px 0 40px;
+
+}
+
+
+.container {
+
+    width: min(1200px, 94%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(340px, .85fr);
+
+    gap: 28px;
+
+}
+
+
+/* ======================================================
+   TARJETAS
+====================================================== */
+
+.text-input,
+.text-output {
+
+    background: var(--card);
+
+    border: 1px solid
+        rgba(220, 232, 216, .8);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.text-input:hover,
+.text-output:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+
+/* ======================================================
+   PANEL DE ENTRADA
+====================================================== */
+
+.text-input {
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+/* ======================================================
+   ENCABEZADOS DE SECCIÓN
+====================================================== */
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: var(--primary-dark);
+
+    font-size: .72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.section-header h2 {
+
+    font-size: 1.45rem;
+
+    font-weight: 700;
+
+}
+
+
+/* ======================================================
+   SELECTOR DE ALGORITMO
+====================================================== */
+
+.algorithm-selector {
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7fcf5,
+            #eef8eb
+        );
+
+    border: 1px solid var(--border);
+
+}
+
+
+.algorithm-selector label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    color: var(--text-secondary);
+
+}
+
+
+.algorithm-selector select {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: .25s ease;
+
+}
+
+
+.algorithm-selector select:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(107, 191, 89, .13);
+
+}
+
+
+.algorithm-description {
+
+    margin-top: 9px;
+
+    color: var(--text-secondary);
+
+    font-size: .82rem;
+
+    line-height: 1.5;
+
+}
+
+/* ======================================================
+   INFORMACIÓN DEL ALGORITMO
+====================================================== */
+
+.algorithm-info {
+
+    margin-top: 10px;
+
+}
+
+
+.algorithm-metadata {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 12px;
+
+}
+
+
+.algorithm-metadata span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    color: var(--text-secondary);
+
+    font-size: .72rem;
+
+    font-weight: 600;
+
+}
+
+
+/* ======================================================
+   TEXTAREA
+====================================================== */
+
+.text-input__text {
+
+    width: 100%;
+
+    min-height: 330px;
+
+    padding: 22px;
+
+    resize: vertical;
+
+    border: 2px solid transparent;
+
+    border-radius: 18px;
+
+    outline: none;
+
+    background: #fbfef9;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 1.08rem;
+
+    line-height: 1.7;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+
+.text-input__text::placeholder {
+
+    color: #9ba99a;
+
+}
+
+
+.text-input__text:focus {
+
+    background: white;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(107, 191, 89, .12);
+
+}
+
+
+/* ======================================================
+   CONTADORES
+====================================================== */
+
+.info-bar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 11px 15px;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+
+    color: var(--text-secondary);
+
+    font-size: .82rem;
+
+    font-weight: 600;
+
+}
+
+
+.info-bar span {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+/* ======================================================
+   BOTONES
+====================================================== */
+
+.button_container_1 {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+button {
+
+    min-height: 52px;
+
+    padding: 13px 18px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    font-family: inherit;
+
+    font-size: .92rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+button:active {
+
+    transform: scale(.98);
+
+}
+
+
+/* Encriptar */
+
+.button__encriptar {
+
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 8px 18px
+        rgba(107, 191, 89, .22);
+
+}
+
+
+.button__encriptar:hover {
+
+    background: var(--primary-dark);
+
+    box-shadow:
+        0 12px 24px
+        rgba(107, 191, 89, .28);
+
+}
+
+
+/* Desencriptar */
+
+.button__desencriptar {
+
+    background: white;
+
+    color: var(--primary-dark);
+
+    border: 1px solid var(--primary);
+
+}
+
+
+.button__desencriptar:hover {
+
+    background: var(--primary-light);
+
+}
+
+
+/* Copiar */
+
+.button__copiar {
+
+    background: #eef5ec;
+
+    color: var(--primary-dark);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.button__copiar:hover {
+
+    background: #e2f1dd;
+
+}
+
+
+/* Limpiar */
+
+.button__limpiar {
+
+    background: #f5f5f5;
+
+    color: #646464;
+
+    border: 1px solid #e4e4e4;
+
+}
+
+
+.button__limpiar:hover {
+
+    background: #ebebeb;
+
+}
+
+
+/* ======================================================
+   PANEL DE RESULTADO
+====================================================== */
+
+.text-output {
+
+    min-height: 620px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.text-output::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 240px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(107, 191, 89, .07);
+
+    top: -110px;
+
+    right: -100px;
+
+}
+
+
+.text-output::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(107, 191, 89, .05);
+
+    bottom: -90px;
+
+    left: -90px;
+
+}
+
+
+/* ======================================================
+   IMAGEN RESULTADO
+====================================================== */
+
+.text-output__image {
+
+    width: 190px;
+
+    max-width: 75%;
+
+    margin-bottom: 25px;
+
+    position: relative;
+
+    z-index: 1;
+
+    animation:
+        flotar 3.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* ======================================================
+   RESULTADO
+====================================================== */
+
+.text-output__title {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 15px;
+
+    font-size: 1.4rem;
+
+    font-weight: 700;
+
+}
+
+
+.text-output__text {
+
+    width: 100%;
+
+    max-height: 280px;
+
+    min-height: 110px;
+
+    overflow-y: auto;
+
+    padding: 18px;
+
+    border-radius: 17px;
+
+    background: #f8fcf6;
+
+    border: 1px dashed var(--border);
+
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.text-encriptado {
+
+    color: var(--primary-dark) !important;
+
+    font-weight: 600;
+
+}
+
+
+.text-desencriptado {
+
+    color: var(--text) !important;
+
+    font-weight: 600;
+
+}
+
+
+/* ======================================================
+   ACCIONES DEL RESULTADO
+====================================================== */
+
+.result-actions {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* ======================================================
+   TOAST
+====================================================== */
+
+#toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 30px;
+
+    transform:
+        translate(-50%, 120px);
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    background: #263326;
+
+    color: white;
+
+    font-size: .88rem;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, .18);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+}
+
+
+#toast.mostrar {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer {
+
+    width: min(1200px, 94%);
+
+    margin: 0 auto;
+
+    padding: 10px 0 35px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    font-size: .82rem;
+
+}
+
+
+.footer p {
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* ======================================================
+   ANIMACIONES
+====================================================== */
+
+@keyframes flotar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar {
+
+    width: 9px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #edf4ea;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #a8cfa0;
+
+    border-radius: 20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary);
+
+}
+
+
+/* ======================================================
+   SELECCIÓN
+====================================================== */
+
+::selection {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+/* ======================================================
+   RESPONSIVE — TABLET
+====================================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .text-output {
+
+        min-height: 450px;
+
+    }
+
+}
+
+
+/* ======================================================
+   RESPONSIVE — MÓVIL
+====================================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding-top: 25px;
+
+    }
+
+    .container-header {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .logo {
+
+        width: 68px;
+
+        height: 68px;
+
+    }
+
+    .text-input,
+    .text-output {
+
+        padding: 20px;
+
+        border-radius: 20px;
+
+    }
+
+    .text-input__text {
+
+        min-height: 260px;
+
+        font-size: 1rem;
+
+    }
+
+    .button_container_1 {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .result-actions {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .info-bar {
+
+        font-size: .76rem;
+
+    }
+
+    .text-output {
+
+        min-height: 400px;
+
+    }
+
+    .text-output__image {
+
+        width: 145px;
+
+    }
+
+    /* ======================================================
+    CONFIGURACIÓN DEL ALGORITMO
+    ====================================================== */
+
+    .algorithm-configuration {
+
+        width: 100%;
+
+        margin-top: 14px;
+
+        padding: 16px;
+
+        border-radius: 16px;
+
+        background: rgba(255, 255, 255, 0.75);
+
+        border: 1px solid var(--border);
+
+    }
+
+
+    /* Etiqueta */
+
+    .algorithm-configuration label {
+
+        display: block;
+
+        width: 100%;
+
+        margin-bottom: 10px;
+
+        color: var(--text-secondary);
+
+        font-size: .85rem;
+
+        font-weight: 700;
+
+    }
+
+
+    /* ======================================================
+    CONTROL DE CONFIGURACIÓN
+    ====================================================== */
+
+    .algorithm-config-control {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    /* Slider */
+
+    .algorithm-config-input {
+
+        display: block;
+
+        width: 100%;
+
+        height: 8px;
+
+        margin: 0;
+
+        padding: 0;
+
+        accent-color: var(--primary);
+
+        cursor: pointer;
+
+    }
+
+
+    /* Valor */
+
+    .algorithm-config-display {
+
+        display: block;
+
+        width: 100%;
+
+        text-align: center;
+
+        color: var(--primary-dark);
+
+        font-size: .9rem;
+
+        font-weight: 700;
+
+    }
+
+}
